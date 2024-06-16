@@ -2,12 +2,19 @@
 <div class="navbar">
     <div class="logo">MC Burguer</div>
     <div>
-        <a href="#home">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
+        <a (click)="goInicio()">Início</a>
+        <a (click)="goCarrinho()">Carrinho</a>
     </div>
 </div>
-<div>
 
+<div class="menu-container">
+    <div class="menu-item" *ngFor="let item of produtos; let i = index">
+        <div class="product-info">
+            <img src="assets/img/imgFundo01.png" alt="{{ item.titulo }}">
+            <span class="product-name">{{ item.titulo }}</span>
+            <span class="product-desc">{{ item.descricao }}</span>
+            <span class="product-price">{{ item.valor }},00</span>
+            <button class="btn-carrinho">Adicionar ao Carrinho</button>
+        </div>
+    </div>
 </div>

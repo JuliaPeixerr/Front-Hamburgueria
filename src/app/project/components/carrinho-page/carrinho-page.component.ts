@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'carrinho-page',
@@ -7,12 +8,19 @@ import { Component, OnInit } from "@angular/core";
 })
 export class CarrinhoPageComponent implements OnInit {
 
-    constructor() {
-
-    }
+    constructor(
+        private router: Router
+    ) { }
 
     ngOnInit(): void {
     
     }
 
+    goInicio() {
+        this.router.navigate([''], { skipLocationChange: true });
+    }
+  
+    goCarrinho() {
+      this.router.navigate(['/carrinho'], { skipLocationChange: true });
+    }
 }

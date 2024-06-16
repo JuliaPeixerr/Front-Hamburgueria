@@ -4,6 +4,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { HomePageComponent } from "./home-page.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutoServiceModule } from "../../core/services/produto";
+import { MatIconModule } from "@angular/material/icon";
+import { RouterModule } from "@angular/router";
+import { CarrinhoPageComponentModule } from "../carrinho-page";
 
 @NgModule({
     declarations: [
@@ -16,7 +19,10 @@ import { ProdutoServiceModule } from "../../core/services/produto";
         CommonModule,
         BrowserModule,
         BrowserAnimationsModule,
-        ProdutoServiceModule
+        ProdutoServiceModule,
+        MatIconModule,
+        RouterModule,
+        CarrinhoPageComponentModule
     ]
 })
 export class HomePageComponentModule { }

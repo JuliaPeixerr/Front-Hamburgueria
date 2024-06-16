@@ -2,26 +2,99 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #efefef;
+    box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.28);
     padding: 10px;
     height: 40px;
+
+    a {
+        text-decoration: none;
+        padding: 14px 20px;
+        background-color: #efefef;
+        border-radius: 5px;
+        color: black;
+        font-weight: 600;
+        font-size: 17px;
+    
+        &:hover {
+            background-color: #dfdede;
+            cursor: pointer;
+        }
+    }
+
+    .logo {
+        font-size: 25px;
+        font-weight: bold;
+        background-color: #efefef;
+    }
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    background-color: #333;
-    border-radius: 5px;
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 16px;
+    margin-top: 2rem;
 }
 
-.navbar a:hover {
-    background-color: #000000;
+.menu-item {
+    width: 230px;
+    height: 100%;
+    margin: 8px;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 28%);
+    transition: transform 0.2s;
+    background-color: #efefef;
 }
 
-.navbar .logo {
-    font-size: 20px;
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #efefef;
+    gap: 6px;
+}
+
+.product-name {
+    font-size: 1.2em;
     font-weight: bold;
+    background-color: #efefef;
+}
+
+.product-desc {
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #efefef;
+    min-height: 22px;
+}
+
+.product-price {
+    font-size: 20px;
+    color: rgb(255 0 0);
+    font-weight: 600;
+    background-color: #efefef;
+}
+
+.btn-carrinho {
+    border: 1px solid #8b5757;
     color: white;
-    background-color: #333;
+    padding: 6px;
+    border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #4e3131;
+    }
+}
+
+img {
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
