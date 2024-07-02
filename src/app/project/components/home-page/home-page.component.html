@@ -14,7 +14,7 @@
             <span class="product-name">{{ item.titulo }}</span>
             <span class="product-desc">{{ item.descricao }}</span>
             <span class="product-price">{{ item.valor }},00</span>
-            <button class="btn-carrinho">Adicionar ao Carrinho</button>
+            <button class="btn-carrinho" (click)="addItem(item.id)">Adicionar ao Carrinho</button>
         </div>
     </div>
 </div>

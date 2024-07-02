@@ -7,6 +7,7 @@ import { ProdutoServiceModule } from "../../core/services/produto";
 import { MatIconModule } from "@angular/material/icon";
 import { RouterModule } from "@angular/router";
 import { CarrinhoPageComponentModule } from "../carrinho-page";
+import { CarrinhoServiceModule } from "../../core";
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { CarrinhoPageComponentModule } from "../carrinho-page";
         ProdutoServiceModule,
         MatIconModule,
         RouterModule,
-        CarrinhoPageComponentModule
+        CarrinhoPageComponentModule,
+        CarrinhoServiceModule
     ]
 })
 export class HomePageComponentModule { }

@@ -8,50 +8,26 @@
 
 <div class="cart-container">
     <h2><i class="fas fa-shopping-cart"></i>Carrinho</h2>
-    <div class="cart-item"> <!-- ngfor nesse cart-item -->
+    <div class="cart-item" *ngFor="let item of itens"> 
         <div class="item-details">
-            <h3>X Simples</h3>
-            <p>Pão, Hamburguer, Queijo, Alface, Tomate, Batata Palha</p>
+            <h3>{{ item?.produto?.titulo }}</h3>
+            <p>{{ item?.produto?.descricao }}</p>
         </div>
-        <h3 class="item-price">R$ 20,00</h3>
+        <h3 class="item-price">Valor: {{ item?.carrinhoItens?.valorTotal }},00</h3>
         <div class="item-quantity">
-            <i class="fas fa-plus"></i>
-            <span>{{ 2 }}</span>
-            <i class="fas fa-minus"></i>
+            <i class="fas fa-plus" (click)="alterQuantidade(true, item?.carrinhoItens?.id)"></i>
+            <span>{{ item?.carrinhoItens?.quantidade }}</span>
+            <i class="fas fa-minus" (click)="alterQuantidade(false, item?.carrinhoItens?.id)"></i>
         </div>
-        <button class="btn-excluir"><i class="fas fa-x"></i></button>
+        <button class="btn-excluir" (click)="remove(item?.carrinhoItens?.id)"><i class="fas fa-x"></i></button>
     </div>
-    <div class="cart-item">
-        <div class="item-details">
-            <h3>X Salada</h3>
-            <p>Pão, Hamburguer, Queijo, Alface, Tomate, Batata Palha</p>
-        </div>
-        <h3 class="item-price">R$ 20,00</h3>
-        <div class="item-quantity">
-            <i class="fas fa-plus"></i>
-            <span>{{ 2 }}</span>
-            <i class="fas fa-minus"></i>
-        </div>
-        <button class="btn-excluir"><i class="fas fa-x"></i></button>
-    </div>
-    <div class="cart-item">
-        <div class="item-details">
-            <h3>X Bacon</h3>
-            <p>Pão, Hamburguer, Queijo, Alface, Tomate, Batata Palha</p>
-        </div>
-        <h3 class="item-price">R$ 20,00</h3>
-        <div class="item-quantity">
-            <i class="fas fa-plus"></i>
-            <span>{{ 2 }}</span>
-            <i class="fas fa-minus"></i>
-        </div>
-        <button class="btn-excluir"><i class="fas fa-x"></i></button>
-    </div>
+    <div class="cart-empty" *ngIf="!itens || itens.length <= 0">
+        Seu carrinho está vazio! Adicione items novos!</div>
 </div>
 
 <div class="cart-container finalizar">
     <div class="cart-total">
-        <h3>Total: R$ 60,00</h3>
+        <h3>Total: R$ {{total ?? 0}},00</h3>
     </div>
-    <button class="btn-finalizar">Finalizar</button>
+    <button class="btn-finalizar" (click)="finalizar()">Finalizar</button>
 </div>

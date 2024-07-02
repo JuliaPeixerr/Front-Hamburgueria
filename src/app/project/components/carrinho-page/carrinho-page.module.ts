@@ -9,6 +9,8 @@ import { RouterModule } from "@angular/router";
 import { CarrinhoPageComponent } from "./carrinho-page.component";
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarrinhoServiceModule } from "../../core";
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
     declarations: [
@@ -27,7 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatButtonModule,
         MatIconModule,
         BrowserAnimationsModule,
-        BrowserModule
+        BrowserModule,
+        CarrinhoServiceModule,
+        ToastrModule.forRoot(),
     ]
 })
 export class CarrinhoPageComponentModule { }

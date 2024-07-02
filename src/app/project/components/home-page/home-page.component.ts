@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { CarrinhoService } from "../../core";
+import { AddItenCommand } from "../../core/domain/command/carrinho";
 import { Produto } from "../../core/domain/models/produto";
 import { GetAllProdutosQuery } from "../../core/domain/query/produto";
 import { ProdutoService } from "../../core/services/produto";
@@ -14,7 +16,8 @@ export class HomePageComponent implements OnInit {
 
   constructor(
     private service: ProdutoService,
-    private router: Router
+    private router: Router,
+    private carrinhoService: CarrinhoService
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +31,17 @@ export class HomePageComponent implements OnInit {
 
     this.service.getAll(query).subscribe(result => {
       this.produtos = result;
+    });
+  }
+
+  addItem(id: number) {
+    var cmd = {
+      codigoProduto: id
+    } as AddItenCommand;
+
+    this.carrinhoService.addItem(cmd).subscribe(result => {
+      // show notification
+      console.log(result);
     });
   }
 
