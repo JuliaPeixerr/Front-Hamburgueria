@@ -8,6 +8,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { RouterModule } from "@angular/router";
 import { CarrinhoPageComponentModule } from "../carrinho-page";
 import { CarrinhoServiceModule } from "../../core";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { CarrinhoServiceModule } from "../../core";
         MatIconModule,
         RouterModule,
         CarrinhoPageComponentModule,
-        CarrinhoServiceModule
+        CarrinhoServiceModule,
+        ToastrModule.forRoot(),
     ]
 })
 export class HomePageComponentModule { }

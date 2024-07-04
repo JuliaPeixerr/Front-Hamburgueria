@@ -31,4 +31,9 @@ export class CarrinhoService {
         var url = "/Carrinho/item/remove";
         return this.http.post<void>(APIURL + url, command);
     }
+
+    finalize() {
+        var url = "/Carrinho/finalize";
+        return this.http.post<void>(APIURL + url, {});
+    }
 }

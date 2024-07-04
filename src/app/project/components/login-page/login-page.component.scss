@@ -1,0 +1,76 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    height: 100vh;
+    background: #8b5757;
+}
+
+mat-card {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+form {
+    background: white;
+}
+
+mat-card-title {
+    text-align: center;
+    background-color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+mat-form-field {
+    background-color: #fff !important;
+    width: 100%;
+    margin-bottom: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+input {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+mat-label {
+    display: none;
+}
+
+button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #8b5757;
+    margin-top: 20px;
+    border: 1px solid #8b5757;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #4e3131;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+i {
+    
+}
+
+btn-hide mat-icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}

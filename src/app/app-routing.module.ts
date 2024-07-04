@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarrinhoPageComponent, HomePageComponent } from './project/components';
+import { LoginPageComponent } from './project/components/login-page';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomePageComponent },
+  { path: '', component: HomePageComponent },
   { path: 'carrinho', component: CarrinhoPageComponent },
+  { path: 'login', component: LoginPageComponent },
 ];
 
 @NgModule({

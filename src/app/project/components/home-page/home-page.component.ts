@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 import { CarrinhoService } from "../../core";
 import { AddItenCommand } from "../../core/domain/command/carrinho";
 import { Produto } from "../../core/domain/models/produto";
@@ -17,7 +18,8 @@ export class HomePageComponent implements OnInit {
   constructor(
     private service: ProdutoService,
     private router: Router,
-    private carrinhoService: CarrinhoService
+    private carrinhoService: CarrinhoService,
+    private notification: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -39,9 +41,9 @@ export class HomePageComponent implements OnInit {
       codigoProduto: id
     } as AddItenCommand;
 
-    this.carrinhoService.addItem(cmd).subscribe(result => {
-      // show notification
-      console.log(result);
+    this.carrinhoService.addItem(cmd).subscribe(() => {
+      this.router.navigate(['/carrinho'], { skipLocationChange: true });
+      this.notification.success('Item adicionado ao carrinho');
     });
   }
 

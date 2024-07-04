@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { MatSnackBar } from "@angular/material";
 import { Router } from "@angular/router";
-import { IndividualConfig, ToastrService } from "ngx-toastr";
-import { Carrinho, CarrinhoItem, ItemProdutoDto } from "../../core";
+import { ToastrService } from "ngx-toastr";
+import { ItemProdutoDto } from "../../core";
 import { CarrinhoService } from "../../core/services/carrinho/carrinho.service";
 
 @Component({
@@ -14,13 +13,6 @@ export class CarrinhoPageComponent implements OnInit {
     itens: ItemProdutoDto[] = [];
     total?: number;
 
-    toastrConfig: Partial<IndividualConfig> = {
-        positionClass: 'toast-top-center',
-        progressBar: true,
-        timeOut: 3000,
-        extendedTimeOut: 2000,
-        toastClass: "notification-custom",
-    };
     constructor(
         private router: Router,
         private service: CarrinhoService,
@@ -59,13 +51,20 @@ export class CarrinhoPageComponent implements OnInit {
 
         this.service.remove({ id }).subscribe(() => {
             this.load();
+            this.notification.success('Item removido com sucesso');
         });
 
-        this.notification.success('Item removido', 'Sucesso!', this.toastrConfig);
     }
 
     finalizar() {
-        this.notification.success('Compra finalizada', 'Sucesso!', this.toastrConfig);
+        if (!this.itens || this.itens.length <= 0)
+            return this.notification.error('Não há itens para finalizar');
+
+        return this.service.finalize().subscribe(() => {
+            this.load();
+            this.total = 0;
+            this.notification.success('Compra finalizada com sucesso');
+        })
     }
 
     goInicio() {

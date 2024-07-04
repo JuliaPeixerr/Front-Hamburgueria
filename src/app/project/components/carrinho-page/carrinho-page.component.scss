@@ -171,19 +171,3 @@
         }
     }
 }
-
-.notification-custom {
-    background-color: #333;
-    color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    padding: 16px;
-    max-width: 400px;
-
-    &.toast-top-center {
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}

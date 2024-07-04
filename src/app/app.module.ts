@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarrinhoPageComponentModule } from './project/components';
 import { HomePageComponentModule } from './project/components/home-page';
+import { LoginPageComponentModule } from './project/components/login-page';
 import { ProdutoServiceModule } from './project/core/services/produto';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ProdutoServiceModule } from './project/core/services/produto';
     HttpClientModule,
     HomePageComponentModule,
     RouterModule,
-    CarrinhoPageComponentModule
+    CarrinhoPageComponentModule,
+    LoginPageComponentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
