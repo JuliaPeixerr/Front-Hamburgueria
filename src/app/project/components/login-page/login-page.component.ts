@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
+import { ClienteService } from "../../core/services/cliente";
 
 @Component({
   selector: 'login-page',
@@ -7,25 +9,33 @@ import { Router } from "@angular/router";
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-  hiddenPassword: boolean = false;
+  usuario: string = '';
+  senha: string = '';
 
   constructor(
     private router: Router,
+    private service: ClienteService,
+    private notification: ToastrService
   ) { }
 
   ngOnInit(): void {
 
   }
 
-  hide(): boolean {
-    return this.hiddenPassword = !this.hiddenPassword;
+  login() {
+    console.log(this.usuario, this.senha);
+    this.service.login({
+      usuario: this.usuario,
+      senha: this.senha
+    }).subscribe(() => {
+      this.notification.success('Usuário logado com sucesso');
+      this.navigateHome();
+    }, () => {
+      this.notification.error('Erro ao logar, por favor tente novamente');
+    });
   }
 
-  goInicio() {
-    this.router.navigate([''], { skipLocationChange: true });
-  }
-
-  goCarrinho() {
-    this.router.navigate(['/carrinho'], { skipLocationChange: true });
+  private navigateHome() {
+    this.router.navigate(['home'], { skipLocationChange: true });
   }
 }

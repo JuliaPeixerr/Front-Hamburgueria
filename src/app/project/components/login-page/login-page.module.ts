@@ -9,6 +9,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material";
+import { ClienteServiceModule } from "../../core";
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { MatIconModule } from "@angular/material";
         MatFormFieldModule,
         ReactiveFormsModule,
         FormsModule,
-        MatIconModule
+        MatIconModule,
+        ClienteServiceModule
     ]
 })
 export class LoginPageComponentModule { }

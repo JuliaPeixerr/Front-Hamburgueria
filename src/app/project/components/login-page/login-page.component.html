@@ -1,34 +1,9 @@
+
 <div class="login-container">
-    <mat-card>
-      <mat-card-title>Login</mat-card-title>
-      <mat-card-content>
-        <form>
-          <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input
-                matInput
-                placeholder="Digite seu email">
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input 
-                matInput
-                placeholder="Digite sua senha"
-                [type]="hiddenPassword ? 'password' : 'text'">
-            <button
-                mat-icon-button
-                matSuffix
-                (click)="hide()"
-                [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide()"
-                class="btn-hide">
-                <i class="fas fa-eye" *ngIf="hiddenPassword"></i>
-                <i class="fas fa-eye-slash" *ngIf="!hiddenPassword"></i>
-            </button>
-          </mat-form-field>
-          <button mat-raised-button color="primary">Login</button>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  
+  <form class="login">
+    <h2>Login</h2>
+    <input id="usuario" [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" type="text" placeholder="Usuário">
+    <input id="senha" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" type="password" placeholder="Senha">
+    <button (click)="login()">Entrar</button>
+  </form>
+</div>

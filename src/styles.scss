@@ -1,12 +1,16 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: #8b5757;
     font-family: system-ui;
 }
 
 .ngx-toastr {
     &.toast-success {
+        background-size: 1.2rem;
+        background-color: #919191;
+    }
+
+    &.toast-error {
         background-size: 1.2rem;
         background-color: #919191;
     }

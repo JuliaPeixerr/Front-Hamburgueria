@@ -1,76 +1,127 @@
+$greenSeaweed: rgba(2, 128, 144, 1);
+$blueQueen: rgba(69, 105, 144, 1);
+$redFire: rgba(244, 91, 105, 1);
+$primary: #8b5757;
+$fontAsap: 'Asap', sans-serif;
+
 .login-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
-    height: 100vh;
-    background: #8b5757;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  height: 100vh;
+  background: $primary;
 }
 
-mat-card {
-    width: 400px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+body {
+  background-color: $redFire;
+  font-family: $fontAsap;
 }
 
-form {
-    background: white;
-}
+.login {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  position: absolute;
+  align-items: center;
+  width: 400px;
+  display: ruby;
+  box-shadow: 5px 10px 10px rgba($greenSeaweed, 0.2);
 
-mat-card-title {
-    text-align: center;
-    background-color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-}
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: -1;
+  }
 
-mat-form-field {
-    background-color: #fff !important;
-    width: 100%;
-    margin-bottom: 16px;
-    border: 1px solid black;
+  &::before {
+    left: 40%;
+    bottom: -130%;
+    background-color: rgba($blueQueen, 0.15);
+  }
+
+  &::after {
+    left: 35%;
+    bottom: -125%;
+    background-color: rgba($greenSeaweed, 0.2);
+  }
+
+  input {
+    font-family: $fontAsap;
+    display: block;
     border-radius: 5px;
-}
-
-input {
-    background-color: #fff;
-    border-radius: 4px;
-}
-
-mat-label {
-    display: none;
-}
-
-button {
-    padding: 12px;
     font-size: 16px;
-    font-weight: bold;
-    background: #8b5757;
-    margin-top: 20px;
-    border: 1px solid #8b5757;
-    color: white;
-    padding: 6px;
+    background: white;
+    width: 100%;
+    border: 0;
+    padding: 10px 10px;
+    margin: 15px -10px;
+  }
+
+  button {
+    font-family: $fontAsap;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    width: 80px;
+    border: 0;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-left: -5px;
     border-radius: 5px;
+    background: $primary;
 
     &:hover {
-        cursor: pointer;
-        background-color: #4e3131;
+      cursor: pointer;
+      background-color: #4e3131;
     }
+  }
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+a {
+  text-decoration: none;
+  color: rgba(white, 0.6);
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
 }
 
-i {
-    
-}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #efefef;
+  box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.28);
+  padding: 10px;
+  height: 40px;
 
-btn-hide mat-icon-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;    
+  a {
+    text-decoration: none;
+    padding: 14px 20px;
+    background-color: #efefef;
+    border-radius: 5px;
+    color: black;
+    font-weight: 600;
+    font-size: 17px;
+
+    &:hover {
+      background-color: #dfdede;
+      cursor: pointer;
+    }
+  }
+
+  .logo {
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #efefef;
+  }
 }

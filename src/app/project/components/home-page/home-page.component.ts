@@ -48,7 +48,7 @@ export class HomePageComponent implements OnInit {
   }
 
   goInicio() {
-    this.router.navigate([''], { skipLocationChange: true });
+    this.router.navigate(['home'], { skipLocationChange: true });
   }
 
   goCarrinho() {
